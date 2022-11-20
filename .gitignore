@@ -1,0 +1,35 @@
+
+front/node_modules
+back/node_modules
+front/.pnp
+front/.pnp.js
+
+
+# next.js
+front/.next/
+front/out/
+
+# production
+front/build
+back/distr
+
+# misc
+front/.DS_Store
+front/*.pem
+
+# debug
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+front/.env*.local
+back/.env*.local
+
+# vercel
+front/.vercel
+
+# typescript
+front/*.tsbuildinfo
+front/next-env.d.ts

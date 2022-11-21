@@ -9,7 +9,7 @@ const createToken=(id:number, login:string, role:userRole)=>{
     return jwt.sign({id, login, role}, process.env.SECRET_KEY, {expiresIn: 2592000})
 }
 
-interface iRequestCreqateUser extends Request{
+interface iRequestCreateUser extends Request{
     body:{
         login: string,
         password: string,
@@ -41,7 +41,7 @@ class UserController{
 
     }
 
-    public createUser=async(req: iRequestCreqateUser, res: Response)=>{
+    public createUser=async(req: iRequestCreateUser, res: Response)=>{
         const createdUser = await createUser(req.body.login, req.body.password, req.body?.role)
         const token = createToken(createdUser.getDataValue('id') ,createdUser.getDataValue('login'), <userRole>createdUser.getDataValue('role'))
         return res.status(200).json({
